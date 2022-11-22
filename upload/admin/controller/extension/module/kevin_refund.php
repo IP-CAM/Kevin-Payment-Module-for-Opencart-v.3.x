@@ -1,7 +1,7 @@
 <?php
 /*
 * 2020 kevin. payment  for OpenCart version 3.0.x.x
-* @version 1.0.1.5
+* @version 1.0.1.6
 *
 * NOTICE OF LICENSE
 *
@@ -21,7 +21,7 @@ class ControllerExtensionModuleKevinRefund extends Controller
     private $error = [];
 
     private $lib_version = '0.3';
-    private $plugin_version = KEVIN_VERSION;
+    private $plugin_version = '1.0.1.6';
 
     public function install()
     {
@@ -600,7 +600,7 @@ class ControllerExtensionModuleKevinRefund extends Controller
             foreach ($refund_results as $result) {
                 $currency_value = 1;
 
-                $total = $this->currency->convert((float) ($query_refund['total']), $this->config->get('config_currency'), $result['currency_code']);
+                $total = $this->currency->convert((float) $query_refund['total'], $this->config->get('config_currency'), $result['currency_code']);
 
                 $total_amount = $result['amount'];
                 if ($result['statusGroup'] != 'completed') {

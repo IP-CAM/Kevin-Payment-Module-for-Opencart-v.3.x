@@ -1,7 +1,7 @@
 <?php
 /*
 * 2020 kevin. payment  for OpenCart version 3.0.x.x
-* @version 1.0.1.5
+* @version 1.0.1.6
 *
 * NOTICE OF LICENSE
 *
@@ -15,7 +15,7 @@
 *  @license http://opensource.org/licenses/afl-3.0.php Academic Free License (AFL 3.0)
 */
 // Heading
-$_['heading_title'] = '<span style="font-weight: 700; color:red;">kevin. </span> Payment (versión '.KEVIN_VERSION.')';
+$_['heading_title'] = '<span style="font-weight: 700; color:red;">kevin. </span> Payment (versión 1.0.1.6)';
 
 // Text
 $_['text_clear_success'] = 'Éxito: ¡Has limpiado el registro con éxito!';

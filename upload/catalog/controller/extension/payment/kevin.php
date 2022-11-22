@@ -1,7 +1,7 @@
 <?php
 /*
 * 2020 kevin. payment  for OpenCart version 3.0.x.x
-* @version 1.0.1.5
+* @version 1.0.1.6
 *
 * NOTICE OF LICENSE
 *
@@ -21,7 +21,7 @@ class ControllerExtensionPaymentKevin extends Controller
     private $type = 'payment';
     private $name = 'kevin';
     private $lib_version = '0.3';
-    private $plugin_version = '1.0.1.5';
+    private $plugin_version = '1.0.1.6';
 
     public function index()
     {
@@ -576,6 +576,11 @@ class ControllerExtensionPaymentKevin extends Controller
         }
 
         $order_info = $this->model_checkout_order->getOrder($order_id);
+
+        if (strtolower($order_info['payment_code']) != 'kevin') {
+            header($this->request->server['SERVER_PROTOCOL'].' 400 ');
+            exit('The order has been paid by other payment method.');
+        }
 
         $log_data = 'Answer on WebHook kevin... Payment Method: '.$payment_method.'; Payment ID: '.$payment_id.'; Order ID: '.$order_info['order_id'].'; Payment Status: '.$new_status.'.';
         $this->KevinLog($log_data);

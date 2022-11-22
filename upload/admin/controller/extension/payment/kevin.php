@@ -1,7 +1,7 @@
 <?php
 /*
 * 2020 kevin. payment  for OpenCart version 3.0.x.x
-* @version 1.0.1.5
+* @version 1.0.1.6
 *
 * NOTICE OF LICENSE
 *
@@ -21,7 +21,7 @@ class ControllerExtensionPaymentKevin extends Controller
     private $error = [];
 
     private $lib_version = '0.3';
-    private $plugin_version = KEVIN_VERSION;
+    private $plugin_version = '1.0.1.6';
     private $module_name = 'kevin';
 
     public function install()
@@ -39,7 +39,7 @@ class ControllerExtensionPaymentKevin extends Controller
         $options = [
             'error' => 'array',
             'version' => $this->lib_version,
-            'pluginVersion' => (string) KEVIN_VERSION,
+            'pluginVersion' => (string) '1.0.1.6',
             'pluginPlatform' => 'OpenCart',
             'pluginPlatformVersion' => (string) VERSION,
         ];
